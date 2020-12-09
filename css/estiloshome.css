@@ -1,7 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-}
+
 body{
     font-family: 'Roboto', sans-serif !important;
 
@@ -22,6 +19,9 @@ a{
 }
 .bg-verde{
     background-color: #4cb050;    
+}
+.bg-negro{
+    background-color: #000;
 }
 .bg-lapices{
   
