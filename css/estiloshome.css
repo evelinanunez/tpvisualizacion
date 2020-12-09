@@ -4,7 +4,9 @@
 }
 body{
     font-family: 'Roboto', sans-serif !important;
+
 }
+
 a:hover{
     color: #fff;
 }
@@ -52,11 +54,11 @@ a{
     height: 100%;
 }
 
-.form{
+/*.form{
     display:block;
  
-}
-#card-home {
+}*/
+/*#card-home {
     width: 450px;
     position: relative;
     z-index: 10;
@@ -70,3 +72,4 @@ a{
     margin:auto;
     position: relative;
 }
+*/
