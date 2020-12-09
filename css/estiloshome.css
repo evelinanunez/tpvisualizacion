@@ -73,3 +73,16 @@ a{
     position: relative;
 }
 */
+.arriba{
+    display: block;
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 50%;
+    background-color: rgb(200, 20, 206);
+    background-image: url(../img/arriba.png);
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-size: cover;
+    z-index: 1;
+}
