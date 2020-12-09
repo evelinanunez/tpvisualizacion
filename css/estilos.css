@@ -1,0 +1,68 @@
+.temasAbiertos {
+    margin-top: 120px;
+}
+
+.temaActivo {
+    display: flex;
+}
+
+.detalle {
+    width: 60%;
+    padding: 1%;
+}
+
+.comentarios {
+    width: 33%;
+}
+
+.comentarios section {
+    display: flex;
+}
+
+.avatar img {
+    border-radius: 50%;
+}
+
+.logo {
+    padding: 1%;
+    margin-top: 20px;
+    width: 7%;
+}
+
+.cantMensajes {
+    width: 40%;
+    padding-left: 8%;
+    padding-right: 8%;
+    margin-top: 30px;
+}
+
+.avatar {
+    padding: 3%;
+    margin-top: 20px;
+}
+
+.user {
+    margin-top: 20px;
+}
+
+.user p {
+    font-style: italic;
+}
+
+.tema {
+    border: 1px solid lightgrey;
+    margin-left: 9%;
+    margin-right: 9%;
+    width: 80%;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.titulo {
+    font-weight: bold; 
+    margin-left: 10%;
+}
+
+.detalle h4 {
+    font-weight: bold;
+}

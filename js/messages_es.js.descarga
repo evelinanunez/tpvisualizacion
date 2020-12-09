@@ -1,0 +1,40 @@
+(function( factory ) {
+	if ( typeof define === "function" && define.amd ) {
+		define( ["jquery", "../jquery.validate"], factory );
+	} else if (typeof module === "object" && module.exports) {
+		module.exports = factory( require( "jquery" ) );
+	} else {
+		factory( jQuery );
+	}
+}(function( $ ) {
+
+/*
+ * Translated default messages for the jQuery validation plugin.
+ * Locale: ES (Spanish; Español)
+ */
+$.extend( $.validator.messages, {
+	required: "Campo obligatorio.",
+	remote: "Por favor, complete este campo.",
+	email: "Por favor, ingrese una dirección de correo válida.",
+	url: "Por favor, ingrese una URL válida.",
+	date: "Por favor, ingrese una fecha válida.",
+	dateISO: "Por favor, ingrese una fecha (ISO) válida.",
+	number: "Por favor, ingrese un valor numérico.",
+	digits: "Por favor, ingrese sólo números.",
+	creditcard: "Por favor, ingrese un número de tarjeta válido.",
+	equalTo: "El valor ingresado no coincide con el anterior.",
+	extension: "Por favor, escriba un valor con una extensión aceptada.",
+	maxlength: $.validator.format( "Máximo {0} caracteres." ),
+	minlength: $.validator.format( "Mínimo {0} caracteres." ),
+	rangelength: $.validator.format( "Por favor, ingrese un valor entre {0} y {1} caracteres." ),
+	range: $.validator.format( "Por favor, ingrese un número entre {0} y {1}." ),
+	max: $.validator.format( "Por favor, ingrese un valor menor o igual a {0}." ),
+	min: $.validator.format( "Por favor, ingrese un valor mayor o igual a {0}." ),
+	nifES: "Por favor, escriba un NIF válido.",
+	nieES: "Por favor, escriba un NIE válido.",
+	cifES: "Por favor, escriba un CIF válido.",
+	accept: "Por favor, seleccione un archivo del tipo indicado.",
+    alphanumeric: "Por favor, ingrese sólo números o letras."
+} );
+return $;
+}));

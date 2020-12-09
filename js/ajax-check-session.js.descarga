@@ -1,0 +1,21 @@
+// Prevengo apertura de popups de tipo ajax si expiro la sesion
+
+$.magnificPopup.instance.open = function (data) {
+    if (data.type !== "ajax" || verificarSesion()) {
+        $.magnificPopup.proto.open.call(this, data);
+    }
+    else {
+        $.magnificPopup.proto.open.call(this, {
+            closeOnBgClick: false,
+            items: {
+                type: 'inline',
+                src: '<div class="w3-modal-content small-popup w3-card-4 w3-clear">' +
+                '<header class="w3-container w3-light-grey"><h5>Sesion finalizada</h5></header>' +
+                '<p class="w3-container">Su sesi&oacute;n ha expirado, por favor ingrese nuevamente.</p>' +
+                '<p class="w3-container w3-right">' +
+                '<a href="javascript:$.magnificPopup.close();" class="w3-btn w3-dark-gray">Cerrar</a></p>' +
+                '</div>'
+            }
+        });
+    }
+};

@@ -1,0 +1,164 @@
+/**
+ * Funciones javascript de soporte para el proyecto. Requiere jQuery.
+ */
+
+// Valida si un input de texto esta en blanco
+function isComplete(obj) {
+    return $(obj).val().trim().length > 0;
+}
+
+// Valida la longitud minima de un input de texto
+function minLength(obj, minLength) {
+    return $(obj).val().trim().length >= minLength;
+}
+
+// Codifica en base64 una cadena de texto
+function base64encode(text) {
+    return btoa(encodeURIComponent(text).replace(/%([0-9A-F]{2})/g,
+        function toSolidBytes(match, p1) {
+            return String.fromCharCode('0x' + p1);
+        }));
+}
+
+// Inputs con la clase onlyDigits solo permiten escribir numeros naturales
+$(document).on("keydown", ".onlyDigits", function (e) {
+    -1 !== $.inArray(e.keyCode, [46, 8, 9, 27, 13, 110]) || /*46:supr 8:bksp 9:tab 27:esc 13:enter*/
+    /65|67|86|88/.test(e.keyCode) && (!0 === e.ctrlKey || !0 === e.metaKey) || /*copiar,cortar,pegar*/
+    112 <= e.keyCode && 123 >= e.keyCode || /*Fx*/
+    35 <= e.keyCode && 40 >= e.keyCode || /*flechitas*/
+    (e.shiftKey || 48 > e.keyCode || 57 < e.keyCode) && (96 > e.keyCode || 105 < e.keyCode) /*numeros*/ && e.preventDefault()
+});
+
+// Inputs con la clase onlyDecimal solo permiten escribir numeros decimales positivos
+$(document).on("keydown", ".onlyDecimal", function (e) {
+    -1 !== $.inArray(e.keyCode, [46, 8, 9, 27, 13, 110]) || /*46:supr 8:bksp 9:tab 27:esc 13:enter*/
+    /65|67|86|88/.test(e.keyCode) && (!0 === e.ctrlKey || !0 === e.metaKey) || /*copiar,cortar,pegar*/
+    112 <= e.keyCode && 123 >= e.keyCode || /*Fx*/
+    35 <= e.keyCode && 40 >= e.keyCode || /*flechitas*/
+    110 === e.keyCode || 190 === e.keyCode || /*punto decimal*/
+    188 === e.keyCode || /*coma*/
+    (e.shiftKey || 48 > e.keyCode || 57 < e.keyCode) && (96 > e.keyCode || 105 < e.keyCode) /*numeros*/ && e.preventDefault()
+});
+
+
+/**
+ * Custom Input File Plugin
+ * @author Leandro Morrone
+ */
+(function($) {
+    $.fn.customInputFile = function(options) {
+
+        // Configuracion por defecto
+        var settings = $.extend({
+            filenameMaxlength: 20,
+            classOver: 'w3-theme-l4',
+            classOut: 'w3-theme',
+            droppable: true
+        }, options);
+
+        // Al hacer clic seteo en null el input, por si selecciona el mismo archivo
+        /*$(this).click(function(e) {
+            $(this).val(null); //en firefox no funciona bien con el boton Cancelar
+        });*/
+
+        // Al cambiar el valor del input, agrego el nombre del archivo seleccionado
+        $(this).change(function(e) {
+
+            // Verifico si existe el span para ubicar el nombre, sino lo creo
+            if ($(this).siblings("span.fileName").length === 0) {
+                $(this).after('<span class="fileName" style="margin-left: 4px;"></span>');
+            }
+
+            // Obtengo el nombre del archivo
+            var fileName = $(this).val().replace(/^.*[\\\/]/, '');
+
+            // Si la longitud del nombre supera el maximo, le pongo puntos suspensivos
+            if (fileName.length > settings.filenameMaxlength) {
+                var fileExt = fileName.substring(fileName.lastIndexOf(".")).toLowerCase();
+                fileName = fileName.substring(0, settings.filenameMaxlength - 5) + "[...]" + fileExt;
+            }
+            // Cargo el nombre en el span y hago focusout para jquery validate
+            $(this).siblings("span.fileName").html(fileName).focusout();
+
+        });
+
+        // Agrego drag and drop de archivos a cada boton
+        if (settings.droppable) {
+            $(this).each(function() {
+
+                // Obtengo el boton (label) asociado al input
+                var inputLabel = $("label.w3-btn[for='" + $(this).attr('id') + "']");
+                var inputFile = this;
+
+                inputLabel.on('dragover', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                });
+                inputLabel.on('dragenter', function(e) {
+                    $(this).removeClass(settings.classOut).addClass(settings.classOver);
+                    e.preventDefault();
+                    e.stopPropagation();
+                });
+                inputLabel.on('dragleave', function(e) {
+                    $(this).removeClass(settings.classOver).addClass(settings.classOut);
+                });
+
+                inputLabel.on('drop', function(e) {
+                    $(this).removeClass(settings.classOver).addClass(settings.classOut);
+
+                    // Obtengo los archivos dropeados sobre el label
+                    var droppedFiles = e.originalEvent.dataTransfer.files;
+
+                    // Verifico que sea un solo archivo
+                    if (droppedFiles.length === 1) {
+
+                        // Verifico el tipo de archivo contra el atributo accept del input
+                        var acceptMimes = $(inputFile).attr("accept");
+                        if (acceptMimes !== undefined && acceptMimes.trim() !== '') {
+                            acceptMimes = acceptMimes.replace(/,/g, '|');
+
+                            if (droppedFiles[0].type.match(acceptMimes) !== null) {
+                                // Asigno el archivo dropeado al input file (no funciona en IE)
+                                inputFile.files = droppedFiles;
+                            }
+                        } else {
+                            // Asigno el archivo dropeado al input file (no funciona en IE)
+                            inputFile.files = droppedFiles;
+                        }
+                    }
+                    $(inputFile).trigger('change');
+                    e.preventDefault();
+                    e.stopPropagation();
+                });
+            });
+        }
+    };
+})(jQuery);
+
+
+/**
+ * Plugin para agregar prefijos a un campo de texto.
+ * @author Leandro Morrone
+ */
+(function($){
+    $.fn.prefijar = function(_prefix) {
+        if (_prefix !== null) {
+            this
+                .off('keydown')
+                .on('keydown', function(e) {
+                    var oldvalue = $(this).val();
+                    var field = this;
+                    setTimeout(function () {
+                        if(field.value.indexOf(_prefix) !== 0) {
+                            $(field).val(oldvalue);
+                        }
+                    }, 1);
+                })
+                .val(_prefix);
+        }
+        else {
+            this.off('keydown').val('');
+        }
+        return this;
+    };
+})(jQuery);
