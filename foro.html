@@ -146,35 +146,41 @@
            <input type="text" id="buscador" name"buscador" placeholder="Buscar...">
            <input type="submit" class='enviar' value='Buscar'>
        </form>
-       <a href=""><img class="notificaciones" src="img/notification.png" alt="notificaciones"></a>
     </div>
     <div class="temasAbiertos">
     <h2 class="titulo">Temas Abiertos</h2>
         <div class="tema">
-            <a href=""><section class="temaActivo">
-                 <div class="logo"><img src="img/foro_logo.png" alt="foro_logo"></div>
+            <section class="temaActivo">
+                 <div class="logo">
+                     <img src="img/foro_logo.png" alt="foro_logo">
+                     <div class="notif"></div>
+                 </div>
                  <div class="detalle">
-                    <h4>General</h4>
-                    <p>Tema para debates y consultas en general. Comisión 02-5900-2C.</p>
+                    <a href=""><h4>General</h4>
+                    <p>Tema para debates y consultas en general. Comisión 02-5900-2C.</p></a>
                  </div>
                  <div class="comentarios">
                      <section>
-                        <div class="cantMensajes"><p>27 mensajes</p></div>
+                        <div class="cantMensajes">
+                            <p>27 mensajes</p>
+                            <p class="noLeido">1 no leido</p>
+                        </div>
                         <div class="avatar"><img src="img/foto_perfil.png" alt="foto_perfil"></div>
                         <div class="user">
                             <p class="nombre">OLIVA, YAIR GONZALO</p>
                             <p>06/09/2020 18:29:41</p>
                         </div>
                      </section>
+                     <span class="tooltiptext">OLIVA, YAIR GONZALO: Buenas, Soy Yair Oliva , trabajo como reparador de computadores... </span>
                  </div>
-            </section></a>
+            </section>
         </div>
         <div class="tema">
-            <a href=""><section class="temaActivo">
+            <section class="temaActivo">
                  <div class="logo"><img src="img/foro_logo.png" alt="foro_logo"></div>
                  <div class="detalle">
-                    <h4>Foro para armar grupo para Tercera EDA</h4>
-                    <p>Foro para armar grupo para Tercera EDA</p>
+                    <a href=""><h4>Foro para armar grupo para Tercera EDA</h4>
+                    <p>Foro para armar grupo para Tercera EDA</p></a>
                  </div>
                  <div class="comentarios">
                      <section>
@@ -185,18 +191,19 @@
                             <p>27/11/2020 18:59:29</p>
                         </div>
                      </section>
+                     <span class="tooltiptext">SPRUTH, IVO: Bringa Juan Manuel - Ivo Spruth</span>
                  </div>
-            </section></a>
+            </section>
         </div>
     </div>
     <div class="temasCerrados">
     <h2 class="titulo">Temas Cerrados</h2>
         <div class="tema">
-            <a href=""><section class="temaActivo">
+            <section class="temaActivo">
                  <div class="logo"><img src="img/closed.png" alt="foro_logo"></div>
                  <div class="detalle">
-                    <h4>Foro Clase 6/11/2020</h4>
-                    <p>“Tu hogar está donde esté tu teléfono móvil. ¿Una absurda lógica reduccionista? Fluidas memorias...</p>
+                    <a href=""><h4>Foro Clase 6/11/2020</h4>
+                    <p>“Tu hogar está donde esté tu teléfono móvil. ¿Una absurda lógica reduccionista? Fluidas memorias...</p></a>
                  </div>
                  <div class="comentarios">
                      <section>
@@ -207,8 +214,9 @@
                             <p>06/11/2020 21:19:39</p>
                         </div>
                      </section>
+                     <span class="tooltiptext">MOLINAS PERLA VIRGINIA: Yo interpreté que ambas campañas trabajan dos aspectos diferentes de...</span>
                  </div>
-            </section></a>
+            </section>
         </div>
     </div>
   </main>
