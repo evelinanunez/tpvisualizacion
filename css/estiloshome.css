@@ -53,25 +53,7 @@ a{
     height: 100%;
 }
 
-/*.form{
-    display:block;
- 
-}*/
-/*#card-home {
-    width: 450px;
-    position: relative;
-    z-index: 10;
-    display: inline-block;
-    vertical-align: middle;
-    text-align: left;
-    margin: 0 auto;
-}
-.contenedor-login{
-    box-sizing: border-box;
-    margin:auto;
-    position: relative;
-}
-*/
+
 .arriba{
     display: block;
     height: 3.5rem;
@@ -119,6 +101,9 @@ a{
 .text-morado{
     color: #e65e39;
 }
+.text-verde{
+    color:#4cb050;
+}
 
 #borde-card-naranja{
     border-top: 1rem solid #ee9a29  ;
@@ -128,4 +113,7 @@ a{
 }
 #borde-card-morado{
     border-top: 1rem solid  #e65e39;
+}
+#borde-card-verde{
+    border-top: 1rem solid #4cb050;
 }
