@@ -36,7 +36,25 @@
                 <a class="nav-link text-light " href="#">Quiénes somos ·</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light " href="#">Contacto</a>
+                <a class="nav-link text-light " href="#">
+                <div class="modal" tabindex="-1">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <p>Modal body text goes here.</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                Contacto</a>
               </li>
  
           </ul>
@@ -72,7 +90,11 @@
                 <input type="password" class="form-control" id="exampleInputPassword1">
               </div>
               <div class="form-group p-1">
-                <button type="submit" class="btn btn-primary ">INGRESAR</button>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-primary" type="button">Ingresar</button>
+
+                </div>
+ 
               </div>
   
               <div class="p-3 mb-2 bg-success text-white bt mt-2">
@@ -94,12 +116,34 @@
        <br>
        <br>
        <br>
+       <section class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Intraconsulta</h5>
+                <p class="card-text">Inscripción y consulta de materias, finales y exámenes libres.</p>
+                <a href="#" class="btn btn-primary bg-dark">Ir a la web </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Calendario académico</h5>
+                <p class="card-text">Consultá las fechas de inscripción a exámenes, inicio de clases, curso de ingreso y de verano, reincorporaciones y pase de universidad.</p>
+                <a href="#" class="btn btn-primary bg-dark">Ver calendario</a>
+              </div>
+            </div>
+          </div>
+        </div>
+       </section>
        <section class="container mt-4 py-4">
          <div class="row">
            <div class="col-12 col-md-6 ">
             <article class="contenedor-video">
               <div>
-                <iframe width="400" height="200" src="https://www.youtube.com/embed/QdgFARKqBGU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ArTVr74nwXo?start=40" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </article>
            </div>
@@ -107,24 +151,24 @@
            <div class="col-12 col-md-6 ">
           <article>
             <div class="card w-75 m-auto mb-2 mt-2 ">
-              <div class="card-body">
-                <h5 class="card-title ">Primeros pasos en Miel</h5>
+              <div class="card-body" id="borde-card-naranja">
+                <h3 class="card-title text-naranja" >Primeros pasos en Miel</h3>
                 <p class="card-text">Ingreso a la plataforma</p>
-                <a href="#" class="btn btn-primary">Mas info</a>
+                <a href="#" class="btn btn-warning bg-naranja">Instructivo</a>
               </div>
             </div>
-            <div class="card w-75 m-auto mb-2"">
-              <div class="card-body">
-                <h5 class="card-title">Sistema de tutorias</h5>
+            <div class="card w-75 m-auto mb-2" >
+              <div class="card-body" id="borde-card-violeta">
+                <h3 class="card-title text-violeta">Sistema de tutorias</h3>
                 <p class="card-text">Dpto. Ciencias económicas</p>
-                <a href="#" class="btn btn-primary">Mas info</a>
+                <a href="#" class="btn btn-primary bg-violeta">Mas info</a>
               </div>
             </div>
             <div class="card w-75 m-auto mb-2"">
-              <div class="card-body">
-                <h5 class="card-title">Catálogo bibliográfico</h5>
+              <div class="card-body" id="borde-card-morado">
+                <h3 class="card-title text-morado ">Catálogo bibliográfico</h3>
                 <p class="card-text">Biblioteca</p>
-                <a href="#" class="btn btn-primary">Mas info</a>
+                <a href="#" class="btn btn-primary bg-morado">Mas info</a>
               </div>
             </div>
 
