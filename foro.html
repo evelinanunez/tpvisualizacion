@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="css/miel-template.css">
     <link rel="stylesheet" href="css/miel-modulos.css">
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilosforo.css">
     
     <!-- Fuentes e iconos de MIeL -->
     <link rel="stylesheet" href="css/material-icons.css">
@@ -99,27 +101,42 @@
         <!-- ============================ DESPLEGABLE DE CURSOS ============================ -->
 
         
-                <li class="w3-hide-medium w3-hide-small">
-                    <a id="botonDropdownCurso" class="w3-hover-theme-d1 w3-padding-6 md-dghgahobnabjdjkmlebkkoabogenjjpo_doc" href="javascript:void(0);" aria-haspopup="true" role="button" aria-label="Visualizacion e Interfaces (02-5900-2C). Seleccionar curso">
+                <li class="w3-hide-medium w3-hide-small my-1">
+                    <!--a id="botonDropdownCurso" class="w3-hover-theme-d1 w3-padding-6 md-dghgahobnabjdjkmlebkkoabogenjjpo_doc text-white " href="javascript:void(0);" aria-haspopup="true" role="button" aria-label="Visualizacion e Interfaces (02-5900-2C). Seleccionar curso">
                         Visualizacion e Interfaces (02-5900-2C)
                         <i class="material-icons" aria-hidden="true"><img src="img/arrow_down.png" alt="arrow"></i>
-                    </a>
-                    <div id="dropdownCurso" class="w3-dropdown-content w3-white w3-card-4" aria-labelledby="botonDropdownCurso">
-            <a href="https://miel.unlam.edu.ar/foro/temas/comision/6663" class="md-dghgahobnabjdjkmlebkkoabogenjjpo_doc">Visualizacion e Interfaces (02-5900-2C)</a>
-                    </div>
+                    </a-->
+                        <select class="form-select  " aria-label="Default select example">
+                            <option selected> Visualizacion e Interfaces (02-5900-2C)</option>
+                            <option value="1">Base de datos</option>
+                            <option value="2">Ingles técnico</option>
+                            <option value="3">Diseño gráfico</option>
+                        </select>
+                    
+
+                    <!--div id="dropdownCurso" class="w3-dropdown-content w3-white w3-card-4" aria-labelledby="botonDropdownCurso">
+            <a href="https://miel.unlam.edu.ar/foro/temas/comision/6663" class="md-dghgahobnabjdjkmlebkkoabogenjjpo_doc ">Visualizacion e Interfaces (02-5900-2C)</a>
+                    </div-->
                 </li>
             
         <!-- ========================= DESPLEGABLE DE HERRAMIENTAS ========================= -->
 
         
-                <li class="w3-hide-medium w3-hide-small">
-                    <a id="botonDropdownHerramienta" class="w3-hover-theme-d1 w3-padding-6 md-dghgahobnabjdjkmlebkkoabogenjjpo_doc" href="javascript:void(0)" aria-haspopup="true" role="button" aria-label="Foros. Seleccionar herramienta">
+                <li class="w3-hide-medium w3-hide-small m-1">
+                    <!--a id="botonDropdownHerramienta" class="w3-hover-theme-d1 w3-padding-6 md-dghgahobnabjdjkmlebkkoabogenjjpo_doc text-white" href="javascript:void(0)" aria-haspopup="true" role="button" aria-label="Foros. Seleccionar herramienta">
                         Foros 
                         <i class="material-icons" aria-hidden="true"><img src="img/arrow_down.png" alt="arrow"></i>
-                    </a>
-                    <div id="dropdownHerramienta" class="w3-dropdown-content w3-white w3-card-4" aria-labelledby="botonDropdownHerramienta">
-            <a href="https://miel.unlam.edu.ar/contenido/archivos/comision/6663" class="md-dghgahobnabjdjkmlebkkoabogenjjpo_doc">Contenidos</a><a href="https://miel.unlam.edu.ar/practicas/practicas/comision/6663" class="md-dghgahobnabjdjkmlebkkoabogenjjpo_doc">Prácticas</a><a href="https://miel.unlam.edu.ar/mensajeria/entrada/comision/6663" class="md-dghgahobnabjdjkmlebkkoabogenjjpo_doc">Mensajería</a><a href="https://miel.unlam.edu.ar/foro/temas/comision/6663" class="md-dghgahobnabjdjkmlebkkoabogenjjpo_doc">Foros</a>
-                    </div>
+                    </a-->
+                    <select class="form-select  " aria-label="Default select example">
+                        <option selected> Foros</option>
+                        <option value="1">Temas abiertos</option>
+                        <option value="2">Temas cerrados</option>
+                        <option value="3">Crear nuevos temas</option>
+                    </select>
+
+                    <!--div id="dropdownHerramienta" class="w3-dropdown-content w3-white w3-card-4" aria-labelledby="botonDropdownHerramienta">
+            <a href="https://miel.unlam.edu.ar/contenido/archivos/comision/6663" class="md-dghgahobnabjdjkmlebkkoabogenjjpo_doc">Contenidos</a><a href="https://miel.unlam.edu.ar/practicas/practicas/comision/6663" class="md-dghgahobnabjdjkmlebkkoabogenjjpo_doc">Prácticas</a><a href="https://miel.unlam.edu.ar/mensajeria/entrada/comision/6663" class="md-dghgahobnabjdjkmlebkkoabogenjjpo_doc">Mensajería</a><a href="https://miel.unlam.edu.ar/foro/temas/comision/6663" class="md-dghgahobnabjdjkmlebkkoabogenjjpo_doc ">Foros</a>
+                    </div-->
                 </li>
             
         <!-- =============================== BOTONERA DERECHA ============================== -->
@@ -143,7 +160,7 @@
    </div>
     <div class="nuevasOpciones">
           <form action="" method="get" enctype="multipart/form-data">
-           <input type="text" id="buscador" name"buscador" placeholder="Buscar...">
+           <input type="text" id="buscador" name="buscador" placeholder="Buscar...">
            <input type="submit" class='enviar' value='Buscar'>
        </form>
     </div>
@@ -223,5 +240,9 @@
   <footer class="w3-container w3-section w3-padding-16 w3-center w3-opacity">
     Departamento de Ingeniería e Investigaciones Tecnológicas - Materias Interactivas en Línea - 2020
   </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js" ></script>
+    
   </body>
 </html>
